@@ -1,0 +1,23 @@
+.side-nav{
+    background-color: rgb(8, 27, 103);
+}
+
+.nav-link{
+    text-decoration: none;
+}
+
+.register{
+    background-color: rgb(8, 27, 103);
+    height: 100vh;
+}
+
+.home-img{
+    background-image: url('/LMSFront.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.modal-bg{
+    background-color: rgb(0, 0, 0, 0.6);
+}
