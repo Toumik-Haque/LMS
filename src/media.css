@@ -1,0 +1,77 @@
+@media screen and (max-width: 991px) {
+    .LMS {
+        display: none;
+    }
+
+    .home {
+        flex-direction: column-reverse !important;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .home-img{
+        height: 40vh !important;
+        width: 90vw;
+    }
+
+    .home-text{
+        font-size: larger !important;
+        margin-bottom: 8vh !important;
+    }
+
+    .nav-links{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        justify-content: end !important;
+        row-gap: 3vh;
+        width: 60vw !important;
+        height: 27vh;
+        margin-bottom: 8vh;
+    }
+
+    .nav-links .btn{
+        margin: 0 !important;
+        padding: 8px;
+    }
+
+    .nav{
+        height: auto !important;
+        justify-content: center !important;
+    }
+
+    form{
+        width: auto !important;
+    }
+
+    .remember-box{
+        column-gap: 2rem !important;
+    }
+
+    .reset, .register{
+        align-items: start !important;
+    }
+
+    .reset > div,
+    .register > div{
+        flex-direction: column !important;
+    }
+
+    .reset .img-box,
+    .register .img-box{
+        padding: 0 !important;
+    }
+
+    .reset img, .register img{
+        width: 18rem;
+    }
+
+    .reset-div, .register-div{
+        width: 20rem !important;
+    }
+
+    .reset .modal-title,
+    .register .modal-title{
+        font-size: larger;
+    }
+
+}

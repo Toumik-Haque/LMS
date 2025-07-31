@@ -1,40 +1,116 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 
 function Register() {
 
     const [modal, setModal] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confPassword, setConfPassword] = useState('')
 
-    function handleRegister(e) {
+    const [error, setError] = useState('')
+
+    const isDisabled = loading;
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfPassword, setShowConfPassword] = useState(false);
+
+    async function handleRegister(e) {
         e.preventDefault()
-        setModal(true)
-        setEmail('')
-        setPassword('')
-        setConfPassword('')
+
+        if (password !== confPassword) {
+            setError('Passwords do not match');
+            return;
+        }
+        setLoading(true)
+        setError('')
+
+        const res = await fetch("", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        })
+
+        if (!res.ok) {
+            if (data?.error === "User already exists") {
+                setError("User already exists with this email");
+            } else {
+                setError("Registration failed. Please try again.");
+            }
+            setLoading(false);
+            return;
+        }
+
+        setTimeout(() => {
+
+            setLoading(false)
+            setModal(true)
+            setEmail('')
+            setPassword('')
+            setConfPassword('')
+
+        }, 3000)
     }
 
 
     return (
 
-        <div className="register d-flex justify-content-center align-items-center pt-5">
+        <div className="register d-flex justify-content-center align-items-center">
 
-            <div className="card d-flex flex-row" style={{ width: '62rem' }}>
-                <div className="w-50 d-flex justify-content-center">
+            <div className="d-flex flex-row align-items-center" style={{ width: '62rem' }}>
+                <div className="img-box w-50 d-flex justify-content-center" style={{ paddingRight: '10rem' }}>
                     <img src="https://img.freepik.com/premium-vector/lms-learning-management-system-vector_116137-2872.jpg" alt="" width="500rem" />
                 </div>
-                <div className="w-50 d-flex align-items-center justify-content-center">
+                <div className="register-div w-50 d-flex align-items-center justify-content-center" style={{ height: '30rem' }}>
 
                     <form onSubmit={handleRegister} className=" d-flex flex-column align-items-center gap-3" style={{ width: '20rem' }}>
                         <h2 className="card-title pb-0 mb-0">Register</h2>
                         <p className="mb-4">Create Your New Account</p>
-                        <input type="email" placeholder="Enter Email" className="p-2 rounded-2 border-1 w-100" onChange={(e) => setEmail(e.target.value)} required value={email} />
-                        <input type="password" placeholder="Create Password" className="p-2 rounded-2 border-1 w-100" onChange={(e) => setPassword(e.target.value)} required value={password} />
-                        <input type="password" placeholder="Confirm Password" className="p-2 rounded-2 border-1 w-100" onChange={(e) => setConfPassword(e.target.value)} required value={confPassword} />
-                        <button type="submit" className="btn btn-primary w-100">Submit</button>
+                        {
+                            error && <p className="text-danger my-0 w-100 p-2 rounded-2" style={{ backgroundColor: '#ffe5e5' }}>{error}</p>
+                        }
+                        <div className="input-group">
+                            <input type="email" id="email" placeholder=" " className="p-2 rounded-2 border-1 w-100" onChange={(e) => setEmail(e.target.value)} required value={email} />
+                            <label htmlFor="email">Enter Email</label>
+                        </div>
+                        <div className="input-group">
+                            <input type={showPassword ? "text" : "password"} id="password" placeholder=" " className="p-2 rounded-2 border-1 w-100" onChange={(e) => setPassword(e.target.value)} required value={password} />
+                            <label htmlFor="password">Create Password</label>
+                            {
+                                password && (
+                                    <span onClick={() => setShowPassword(!showPassword)} className="pass-icon">
+                                        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                                    </span>
+                                )
+                            }
+                        </div>
+                        <div className="input-group">
+                            <input type={showConfPassword ? "text" : "password"} id="confirm-pass" placeholder=" " className="p-2 rounded-2 border-1 w-100" onChange={(e) => setConfPassword(e.target.value)} required value={confPassword} />
+                            <label htmlFor="confirm-pass">Confirm Password</label>
+                            {
+                                confPassword && (
+                                    <span onClick={() => setShowConfPassword(!showConfPassword)} className="pass-icon">
+                                        <FontAwesomeIcon icon={showConfPassword ? faEyeSlash : faEye} />
+                                    </span>
+                                )
+                            }
+                        </div>
+
+                        <button type="submit" className="btn main-btn w-100 submit-btn" disabled={isDisabled}>
+                            {
+                                loading ? (
+                                    <div className="loading-content d-flex align-items-center justify-content-center gap-3">
+                                        <div className="spinner"></div>
+                                        <span className="loading-text">Loading...</span>
+                                    </div>
+                                ) : ('Submit')
+                            }
+                        </button>
                         <div className="d-flex gap-2">
                             <p>Already registered?</p>
                             <Link to={'/'} className="text-decoration-none">Back to Homepage</Link>
@@ -46,15 +122,18 @@ function Register() {
             {
                 modal && (
                     <div className="modal d-block modal-bg" tabIndex="-1">
-                        <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-dialog modal-dialog-centered modal-fade-in">
                             <div className="modal-content">
                                 <div className="modal-header">
                                     <div className="d-flex flex-column align-items-center ms-3 py-4 w-100">
 
-                                        <h3 className="mb-3 fw-bold text-success">You Registered Successfully!</h3>
+                                        <div className="modal-icon-box">
+                                            <FontAwesomeIcon icon={faCheck} className="modal-icon" style={{ width: '2.8rem' }} />
+                                        </div>
+                                        <h3 className="mb-3 fw-bold modal-title">You Registered Successfully!</h3>
                                         <p className="mb-4">Please go back to Homepage for Login</p>
-                                        <button className="btn btn-success" onClick={() => setModal(false)}>OK</button>
-                                    
+                                        <button className="btn main-btn" onClick={() => setModal(false)}>OK</button>
+
                                     </div>
 
                                 </div>
