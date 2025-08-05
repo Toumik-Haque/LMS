@@ -1,3 +1,22 @@
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.home {
+  height: 175vh;
+}
+
+.main {
+  background:
+    linear-gradient(to bottom, transparent 0%, transparent 84%, white 84%, white 100%),
+    linear-gradient(to right, #dacaff, #f2eeff);
+}
+
+.sticky-top {
+  background-color: white;
+}
+
 .side-nav {
   background-color: rgb(8, 27, 103);
 }
@@ -6,9 +25,26 @@
   color: #7830ff;
 }
 
+.home-title {
+  color: #7830ff;
+}
+
+.home-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1.7rem;
+}
+
 .main-btn {
   background-color: #7830ff;
   color: white;
+}
+
+.view-btn {
+  border: 2px solid #7830ff;
+  color: #7830ff;
+  background-color: transparent;
 }
 
 .modal-title {
@@ -38,16 +74,18 @@
   color: #6a00ff;
 }
 
+.hero-btn:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
 .register,
 .reset {
   height: 100vh;
+  background:  linear-gradient(to right, #dacaff, #f2eeff);
 }
 
-.home-img {
-  background-image: url('/LMSFront.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.hero img {
   animation: fadeIn 1s ease-out forwards;
   opacity: 0;
 }
@@ -64,39 +102,67 @@
   }
 }
 
-.home-text {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #332f8e;
-  animation: typing 2s steps(30, end) forwards;
-  white-space: nowrap;
-  overflow: hidden;
-  animation-delay: 1s;
-  animation-fill-mode: both;
+.hero .box {
+  animation: fadeFromX 1s ease-out forwards;
   opacity: 0;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-    opacity: 1;
+@keyframes fadeFromX {
+
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
   }
 
-  to {
-    width: 25ch;
+  100% {
     opacity: 1;
+    transform: translateX(0);
   }
 }
+
+.after-hero .div-box {
+  border: 1px solid rgb(241, 241, 241);
+  height: 11rem;
+  background-color: white;
+  box-shadow: 0 20px 40px rgb(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 1.5s;
+}
+
+.last-box {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 1.5s;
+}
+
+.active {
+  display: block !important;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.card-box .card:hover .text {
+  transform: scale(1.3);
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
 
 .modal-bg {
-  background-color: rgb(0, 0, 0, 0.6);
+  background-color: rgb(0, 0, 0, 0.6) !important;
+  height: 100vh !important;
 }
 
-.reset-div,
-.register-div {
-  border: 1px solid rgb(241, 241, 241);
+.reset > div,
+.register > div {
   height: 25rem;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 20px 40px rgb(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
 }
 
 @keyframes modalFadeIn {
@@ -216,3 +282,22 @@
   user-select: none;
 }
 
+.register .img-box{
+  overflow: hidden;
+  position: relative;
+  border-bottom-right-radius: 30%;
+}
+
+.reset .img-box{
+  background-color: #ad81ff;
+}
+
+.register .img-box::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7d5cffb5;
+}

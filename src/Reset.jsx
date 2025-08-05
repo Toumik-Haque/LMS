@@ -46,13 +46,11 @@ function Reset() {
 
         <div className="reset d-flex justify-content-center align-items-center">
 
-            <div className="d-flex flex-row align-items-center" style={{ width: '62rem' }}>
-                <div className="img-box w-50 d-flex justify-content-center" style={{ paddingRight: '10rem' }}>
-                    <img src="https://img.freepik.com/premium-vector/lms-learning-management-system-vector_116137-2872.jpg" alt="" width="500rem" />
-                </div>
-                <div className="reset-div card w-50 d-flex align-items-center justify-content-center">
+            <div className="d-flex flex-row align-items-center" style={{ width: '45rem', height: '70vh' }}>
+                
+                <div className="reset-div d-flex align-items-center justify-content-center" style={{ height: '100%', width: '65%'}}>
 
-                    <form onSubmit={handleReset} className=" d-flex flex-column align-items-center gap-3" style={{ width: '20rem' }}>
+                    <form onSubmit={handleReset} className="d-flex flex-column align-items-center gap-3" style={{ width: '20rem' }}>
                         <h2 className="card-title pb-0 mb-0">Reset Password</h2>
                         <p>We'll send a reset link, If you registered.</p>
                         {
@@ -77,6 +75,11 @@ function Reset() {
                         </div>
                     </form>
                 </div>
+
+                <div className="img-box d-flex align-items-center justify-content-center" style={{ height: '100%' }}>
+                    <img src="/reset-icon.png" alt="" height="50%" className=""/>
+                </div>
+
             </div>
 
             {

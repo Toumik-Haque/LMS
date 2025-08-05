@@ -1,46 +1,118 @@
 @media screen and (max-width: 991px) {
-    .LMS {
-        display: none;
+    .home{
+        height: fit-content !important;
     }
 
-    .home {
-        flex-direction: column-reverse !important;
-        justify-content: end;
-        align-items: center;
+    .main{
+        overflow: hidden;
+        height: fit-content !important;
     }
 
-    .home-img{
-        height: 40vh !important;
+    .hero > .container{
+        flex-direction: column;
+        height: fit-content !important;
+        align-items: center !important;
+
+    }
+
+    .hero .box{
+        align-items: center !important;
+    }
+
+    .hero .img-box{
+        width: 100% !important;
+        justify-content: center !important;
+        margin-top: 4vh !important;
+    }
+
+    .hero-img{
+        width: 28rem !important;
+    }
+
+    .home-title{
+        transform: scale(0.6);
+        width: 170vw;
+    }
+
+    .home-subtitle{
+        width: 80vw !important;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    .home-title > div{
+        text-align: center;
+    }
+
+    .hero .btn-box{
+        width: 80vw;
+        flex-direction: column;
+    }
+
+    .after-hero .div-box{
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        height: fit-content !important;
+        row-gap: 5vh;
         width: 90vw;
+        column-gap: 0 !important;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
     }
 
-    .home-text{
-        font-size: larger !important;
-        margin-bottom: 8vh !important;
+    .after-hero .div-box > div{
+        width: 100% !important;
+        overflow: hidden;
+        height: fit-content !important;
+        border-right: 0 !important;
     }
 
-    .nav-links{
-        display: flex !important;
-        flex-direction: column-reverse !important;
-        justify-content: end !important;
-        row-gap: 3vh;
-        width: 60vw !important;
-        height: 27vh;
-        margin-bottom: 8vh;
+    .last-box .card-box{
+        flex-direction: column;
     }
 
-    .nav-links .btn{
+    .last-box .card-box .card{
+        width: 100% !important;
+        height: 20vh !important;
+    }
+
+    .bottom-nav .btn{
         margin: 0 !important;
         padding: 8px;
+        width: 60vw;
     }
 
     .nav{
-        height: auto !important;
-        justify-content: center !important;
+        height: 7vh !important;
+        width: 90vw;
     }
 
-    form{
-        width: auto !important;
+    .nav-btns{
+        display: none;
+    }
+
+    .bottom-nav{
+        position: fixed;
+        background-color: white;
+        width: 100vw;
+        padding: 60px 0;
+        left: 0;
+        bottom: 0;
+        display: flex !important;
+        flex-direction: column-reverse;
+        align-items: center;
+        row-gap: 20px;
+        z-index: 999;
+        border-top-left-radius: 10%;
+        border-top-right-radius: 10%;
+        box-shadow: 0 -3px 25px 10px rgba(0, 0, 0, 0.303);
+        animation: 0.3s fadeIn ease-out;
+    }
+
+    .toggle{
+        display: block !important;
+        font-size: 1.6rem;
     }
 
     .remember-box{
@@ -51,22 +123,49 @@
         align-items: start !important;
     }
 
-    .reset > div,
     .register > div{
         flex-direction: column !important;
+        height: 100vh !important;
+        width: 100vw !important;
+        animation: fadeIn 0s ease-out forwards;
     }
 
-    .reset .img-box,
+    .reset > div{
+        flex-direction: column-reverse !important;
+        height: 100vh !important;
+        width: 100vw !important;
+        animation: fadeIn 0s ease-out forwards;
+    }
+
     .register .img-box{
         padding: 0 !important;
+        width: 100% !important;
+        height: 50vh !important;
+        object-position: center !important;
     }
 
-    .reset img, .register img{
-        width: 18rem;
+    .reset .img-box{
+        height: 30vh !important;
+        width: 100%;
+        border-bottom-left-radius: 30%;
+        border-bottom-right-radius: 30%;
+        margin-bottom: 5vh;
+    }
+
+    .register img{
+        width: 100%;
+        height: fit-content;
+    }
+
+    .reset img{
+        width: 14rem;
+        height: auto;
     }
 
     .reset-div, .register-div{
+        align-items: start !important;
         width: 20rem !important;
+        padding-top: 5vh;
     }
 
     .reset .modal-title,

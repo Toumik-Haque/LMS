@@ -62,13 +62,15 @@ function Register() {
 
         <div className="register d-flex justify-content-center align-items-center">
 
-            <div className="d-flex flex-row align-items-center" style={{ width: '62rem' }}>
-                <div className="img-box w-50 d-flex justify-content-center" style={{ paddingRight: '10rem' }}>
-                    <img src="https://img.freepik.com/premium-vector/lms-learning-management-system-vector_116137-2872.jpg" alt="" width="500rem" />
+            <div className="d-flex flex-row align-items-center " style={{ width: '70rem', height: '75vh' }}>
+                
+                <div className="img-box w-50 d-flex justify-content-center " style={{height: '100%'}}>
+                    <img src="/register-img.png" alt="" />
                 </div>
-                <div className="register-div w-50 d-flex align-items-center justify-content-center" style={{ height: '30rem' }}>
 
-                    <form onSubmit={handleRegister} className=" d-flex flex-column align-items-center gap-3" style={{ width: '20rem' }}>
+                <div className="register-div w-50 d-flex align-items-center justify-content-center" style={{ height: '100%'}}>
+
+                    <form onSubmit={handleRegister} className="d-flex flex-column align-items-center gap-3" style={{ width: '20rem'}}>
                         <h2 className="card-title pb-0 mb-0">Register</h2>
                         <p className="mb-4">Create Your New Account</p>
                         {
@@ -117,6 +119,7 @@ function Register() {
                         </div>
                     </form>
                 </div>
+
             </div>
 
             {
