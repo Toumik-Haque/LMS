@@ -77,7 +77,7 @@ function Reset() {
                 </div>
 
                 <div className="img-box d-flex align-items-center justify-content-center" style={{ height: '100%' }}>
-                    <img src="/reset-icon.png" alt="" height="50%" className=""/>
+                    <img src="/LMS/reset-icon.png" alt="" height="50%" className=""/>
                 </div>
 
             </div>

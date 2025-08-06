@@ -124,7 +124,7 @@ function Home() {
                             </div>
                         </div>
                         <div className="w-50 d-flex align-items-center justify-content-end mt-4 img-box" >
-                            <img src="/homeimage.png" alt="" width="800vw" className="hero-img" />
+                            <img src="/LMS/homeimage.png" alt="" width="800vw" className="hero-img" />
                         </div>
                     </div>
                 </Element>
@@ -133,27 +133,27 @@ function Home() {
 
                     <div className="div-box container rounded-3 d-flex align-items-center">
                         <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
-                            <img src="/live-icon.png" alt="" className="my-2" height="50vh" />
+                            <img src="/LMS/live-icon.png" alt="" className="my-2" height="50vh" />
                             <h5 className="mt-2">Real-Time</h5>
                             <h6>Interactive Classes</h6>
                         </div>
                         <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
-                            <img src="/test-icon.png" alt="" className="" height="65vh" />
+                            <img src="/LMS/test-icon.png" alt="" className="" height="65vh" />
                             <h5 className="mt-2">1000+</h5>
                             <h6>Quizzes & Tests</h6>
                         </div>
                         <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
-                            <img src="/dashboard-icon.png" alt="" className="" height="60vh" />
+                            <img src="/LMS/dashboard-icon.png" alt="" className="" height="60vh" />
                             <h5 className="mt-2">Progress</h5>
                             <h6>Monitoring Dashboard</h6>
                         </div>
                         <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRight: '#6a00ff' }}>
-                            <img src="/247-icon.png" alt="" className="" height="65vh" />
+                            <img src="/LMS/247-icon.png" alt="" className="" height="65vh" />
                             <h5 className="mt-2">24/7</h5>
                             <h6>Unlimited Access</h6>
                         </div>
                         <div className="py-0 d-flex flex-column align-items-center justify-content-center" style={{ height: '5rem', width: '100%' }}>
-                            <img src="/learn-icon.png" alt="" className="" height="65vh" />
+                            <img src="/LMS/learn-icon.png" alt="" className="" height="65vh" />
                             <h5 className="mt-2">Learn From</h5>
                             <h6>Qualified Teachers</h6>
                         </div>

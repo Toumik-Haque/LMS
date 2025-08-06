@@ -65,7 +65,7 @@ function Register() {
             <div className="d-flex flex-row align-items-center " style={{ width: '70rem', height: '75vh' }}>
                 
                 <div className="img-box w-50 d-flex justify-content-center " style={{height: '100%'}}>
-                    <img src="/register-img.png" alt="" />
+                    <img src="/LMS/register-img.png" alt="" />
                 </div>
 
                 <div className="register-div w-50 d-flex align-items-center justify-content-center" style={{ height: '100%'}}>
