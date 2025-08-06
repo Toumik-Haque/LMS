@@ -145,7 +145,7 @@ function Home() {
                         <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
                             <img src="/LMS/dashboard-icon.png" alt="" className="" height="60vh" />
                             <h5 className="mt-2">Progress</h5>
-                            <h6>Monitoring Dashboard</h6>
+                            <h6>Dashboard</h6>
                         </div>
                         <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRight: '#6a00ff' }}>
                             <img src="/LMS/247-icon.png" alt="" className="" height="65vh" />
