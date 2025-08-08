@@ -6,7 +6,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Reset() {
 
-    const [modal, setModal] = useState(true)
+    const [modal, setModal] = useState(false)
     const [loading, setLoading] = useState(false)
 
     const [email, setEmail] = useState('')
