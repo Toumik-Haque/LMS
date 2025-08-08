@@ -88,7 +88,7 @@ function Reset() {
                         <div className="modal-dialog modal-dialog-centered modal-fade-in">
                             <div className="modal-content">
                                 <button type="button" className="btn-close align-self-end mt-2 me-2" data-bs-dismiss="modal" aria-label="Close" onClick={() => setModal(false)}></button>
-                                <div className="px-4 d-flex flex-column align-items-center pb-5">
+                                <div className="px-4 d-flex flex-column align-items-center pb-4">
                                     
 
                                         <div className="modal-icon-box">

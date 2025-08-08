@@ -71,11 +71,13 @@
 
     .last-box .card-box{
         flex-direction: column;
+        margin-top: 4vh !important;
     }
 
     .last-box .card-box .card{
-        width: 100% !important;
+        width: 80vw !important;
         height: 20vh !important;
+        margin: auto;
     }
 
     .bottom-nav .btn{
@@ -172,6 +174,21 @@
 
     .modal form{
         max-width: 85vw !important;
+    }
+
+    .last-box > p{
+        transform: scale(0.8);
+        width: 110vw;
+    }
+
+    .last-box > h2{
+        width: 75vw;
+    }
+
+    .last-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
 }
