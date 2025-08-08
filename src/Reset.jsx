@@ -6,7 +6,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Reset() {
 
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(true)
     const [loading, setLoading] = useState(false)
 
     const [email, setEmail] = useState('')
@@ -87,19 +87,15 @@ function Reset() {
                     <div className="modal d-block modal-bg" tabIndex="-1">
                         <div className="modal-dialog modal-dialog-centered modal-fade-in">
                             <div className="modal-content">
-                                <div className="modal-header d-flex align-items-start">
-                                    <div className="d-flex flex-column align-items-center ms-4 py-4 w-100">
+                                <button type="button" className="btn-close align-self-end mt-2 me-2" data-bs-dismiss="modal" aria-label="Close" onClick={() => setModal(false)}></button>
+                                <div className="modal-header d-flex flex-column align-items-center pb-5">
+                                    
 
                                         <div className="modal-icon-box">
                                             <FontAwesomeIcon icon={faEnvelope} className="modal-icon" />
                                         </div>
                                         <h3 className="mb-3 fw-bold modal-title text-center">Reset Link Sent Successfully!</h3>
                                         <p className="mb-3 text-center">Please check your email inbox and follow the link to reset your password.</p>
-
-                                    </div>
-                                    <div>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setModal(false)}></button>
-                                    </div>
 
                                 </div>
 

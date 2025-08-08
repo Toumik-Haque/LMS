@@ -6,7 +6,7 @@ import { faCheck, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 function Register() {
 
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(true)
     const [loading, setLoading] = useState(false)
 
     const [email, setEmail] = useState('')

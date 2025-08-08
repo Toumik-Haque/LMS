@@ -101,8 +101,8 @@ function Home() {
             {
                 toggleNav && (
                     <div className="bottom-nav d-none">
-                        <button className="btn sub-btn rounded-5 px-3 me-3 fw-medium" onClick={() => {setAdminModal(true), setToggleNav(false)}}>Admin Login</button>
-                        <button className="btn main-btn rounded-5 px-3 fw-medium" onClick={() => {setUserModal(true), setToggleNav(false)}}>Login / Register</button>
+                        <button className="btn sub-btn rounded-5 px-3 me-3 fw-medium" onClick={() => { setAdminModal(true), setToggleNav(false) }}>Admin Login</button>
+                        <button className="btn main-btn rounded-5 px-3 fw-medium" onClick={() => { setUserModal(true), setToggleNav(false) }}>Login / Register</button>
                     </div>
                 )
             }
@@ -188,59 +188,53 @@ function Home() {
                     <div className="modal d-block modal-bg" tabIndex="-1">
                         <div className="modal-dialog modal-dialog-centered modal-fade-in">
                             <div className="modal-content">
-                                <div className="modal-header d-flex align-items-start">
-                                    <div className="d-flex flex-column align-items-center ms-3 py-4 w-100">
 
-                                        <h2 className="mb-3 fw-bold">Login</h2>
-                                        <p className="mb-4">Please Enter Your Login Credential</p>
-                                        <form onSubmit={userLogin} className=" d-flex flex-column align-items-center gap-3" style={{ width: '20rem' }}>
+                                <button type="button" className="btn-close align-self-end mt-3 me-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => { setUserModal(false); setLoginError(''); }}></button>
+                                <div className="modal-header d-flex flex-column align-items-center pb-5">
+                                    <h2 className="mb-3 fw-bold">Login</h2>
+                                    <p className="mb-4">Please Enter Your Login Credential</p>
+                                    <form onSubmit={userLogin} className=" d-flex flex-column align-items-center gap-3" style={{ width: '20rem' }}>
 
+                                        {
+                                            loginError && <p className="text-danger my-0 w-100 p-2 rounded-2" style={{ backgroundColor: '#ffe5e5' }}>{loginError}</p>
+                                        }
+                                        <div className="input-group">
+                                            <input type="email" id="email" placeholder=" " className="p-2 rounded-2 border-1 w-100" required onChange={(e) => setEmail(e.target.value)} />
+                                            <label htmlFor="email">Email</label>
+                                        </div>
+                                        <div className="input-group">
+                                            <input type={showPassword ? "text" : "password"} id="password" placeholder=" " className="p-2 rounded-2 border-1 w-100" required onChange={(e) => setPassword(e.target.value)} />
+                                            <label htmlFor="password">Password</label>
                                             {
-                                                loginError && <p className="text-danger my-0 w-100 p-2 rounded-2" style={{ backgroundColor: '#ffe5e5' }}>{loginError}</p>
+                                                password && (
+                                                    <span onClick={() => setShowPassword(!showPassword)} className="pass-icon">
+                                                        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                                                    </span>
+                                                )
                                             }
-                                            <div className="input-group">
-                                                <input type="email" id="email" placeholder=" " className="p-2 rounded-2 border-1 w-100" required onChange={(e) => setEmail(e.target.value)} />
-                                                <label htmlFor="email">Email</label>
+                                        </div>
+                                        <div className="d-flex remember-box justify-content-between w-100" style={{  fontSize: '0.9rem' }}>
+                                            <div className="form-check">
+                                                <input type="checkbox" className="form-check-input border-1 border-dark" id="rememberMe" />
+                                                <label className="form-check-label" htmlFor="rememberMe">Remember Me</label>
                                             </div>
-                                            <div className="input-group">
-                                                <input type={showPassword ? "text" : "password"} id="password" placeholder=" " className="p-2 rounded-2 border-1 w-100" required onChange={(e) => setPassword(e.target.value)} />
-                                                <label htmlFor="password">Password</label>
-                                                {
-                                                    password && (
-                                                        <span onClick={() => setShowPassword(!showPassword)} className="pass-icon">
-                                                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-                                                        </span>
-                                                    )
-                                                }
-                                            </div>
-                                            <div className="d-flex remember-box" style={{ gap: '5.8rem', fontSize: '0.9rem' }}>
-                                                <div className="form-check">
-                                                    <input type="checkbox" className="form-check-input border-1 border-dark" id="rememberMe" />
-                                                    <label className="form-check-label" htmlFor="rememberMe">Remember Me</label>
-                                                </div>
-                                                <div onClick={() => navigate('/reset')} className="link text-decoration-none">Forgot Password?</div>
-                                            </div>
-                                            <button type="submit" className="btn main-btn w-100 submit-btn" disabled={isDisabled}>
-                                                {
-                                                    isLoading ? (
-                                                        <div className="loading-content d-flex align-items-center justify-content-center gap-3">
-                                                            <div className="spinner"></div>
-                                                            <span className="loading-text">Loading...</span>
-                                                        </div>
-                                                    ) : ('Submit')
-                                                }
-                                            </button>
-                                            <div className="d-flex gap-1 align-items-center justify-content-center">
-                                                <p>Have no account?</p>
-                                                <p onClick={() => navigate('/register')} className="text-decoration-none link">Register</p>
-                                            </div>
-                                        </form>
-
-                                    </div>
-                                    <div>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => { setUserModal(false); setLoginError(''); }}></button>
-                                    </div>
-
+                                            <div onClick={() => navigate('/reset')} className="link text-decoration-none">Forgot Password?</div>
+                                        </div>
+                                        <button type="submit" className="btn main-btn w-100 submit-btn" disabled={isDisabled}>
+                                            {
+                                                isLoading ? (
+                                                    <div className="loading-content d-flex align-items-center justify-content-center gap-3">
+                                                        <div className="spinner"></div>
+                                                        <span className="loading-text">Loading...</span>
+                                                    </div>
+                                                ) : ('Submit')
+                                            }
+                                        </button>
+                                        <div className="d-flex gap-1 align-items-center justify-content-center">
+                                            <p>Have no account?</p>
+                                            <p onClick={() => navigate('/register')} className="text-decoration-none link">Register</p>
+                                        </div>
+                                    </form>
                                 </div>
 
                             </div>
@@ -254,8 +248,9 @@ function Home() {
                     <div className="modal d-block modal-bg" tabIndex="-1">
                         <div className="modal-dialog modal-dialog-centered modal-fade-in">
                             <div className="modal-content">
-                                <div className="modal-header d-flex align-items-start">
-                                    <div className="d-flex flex-column align-items-center ms-3 py-4 w-100 my-3">
+                                <button type="button" className="btn-close align-self-end mt-3 me-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => { setAdminModal(false); setLoginError(''); }}></button>
+                                <div className="modal-header d-flex flex-column align-items-center pb-5">
+                                    
 
                                         <h2 className="mb-3 fw-bold">Admin Login</h2>
                                         <p className="mb-4">Please Enter Admin Login Credential</p>
@@ -279,7 +274,7 @@ function Home() {
                                                     )
                                                 }
                                             </div>
-                                            <div className="d-flex remember-box" style={{ gap: '5.8rem', fontSize: '0.9rem' }}>
+                                            <div className="d-flex remember-box justify-content-between w-100" style={{ fontSize: '0.9rem' }}>
                                                 <div className="form-check">
                                                     <input type="checkbox" className="form-check-input border-1 border-dark" id="rememberMe" />
                                                     <label className="form-check-label" htmlFor="rememberMe">Remember Me</label>
@@ -297,11 +292,6 @@ function Home() {
                                                 }
                                             </button>
                                         </form>
-
-                                    </div>
-                                    <div>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => { setAdminModal(false); setLoginError(''); }}></button>
-                                    </div>
 
                                 </div>
 

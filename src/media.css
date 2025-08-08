@@ -115,9 +115,9 @@
         font-size: 1.6rem;
     }
 
-    .remember-box{
+    /* .remember-box{
         column-gap: 2rem !important;
-    }
+    } */
 
     .reset, .register{
         align-items: start !important;
