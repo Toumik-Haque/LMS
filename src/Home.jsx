@@ -132,27 +132,27 @@ function Home() {
                 <Element id="after-hero" className="after-hero d-flex flex-column justify-content-center mt-3 mb-5" >
 
                     <div className="div-box container rounded-3 d-flex align-items-center">
-                        <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
+                        <div className="smart-def py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
                             <img src="/LMS/live-icon.png" alt="" className="my-2" height="50vh" />
                             <h5 className="mt-2">Real-Time</h5>
                             <h6>Interactive Classes</h6>
                         </div>
-                        <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
+                        <div className="smart-def py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
                             <img src="/LMS/test-icon.png" alt="" className="" height="65vh" />
                             <h5 className="mt-2">1000+</h5>
                             <h6>Quizzes & Tests</h6>
                         </div>
-                        <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
+                        <div className="smart-def py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRightColor: '#6a00ff' }}>
                             <img src="/LMS/dashboard-icon.png" alt="" className="" height="60vh" />
                             <h5 className="mt-2">Progress</h5>
-                            <h6>Dashboard</h6>
+                            <h6>Monitoring Dashboard</h6>
                         </div>
-                        <div className="py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRight: '#6a00ff' }}>
+                        <div className="smart-def py-0 d-flex flex-column align-items-center justify-content-center border-end border-2" style={{ height: '5rem', width: '100%', borderRight: '#6a00ff' }}>
                             <img src="/LMS/247-icon.png" alt="" className="" height="65vh" />
                             <h5 className="mt-2">24/7</h5>
                             <h6>Unlimited Access</h6>
                         </div>
-                        <div className="py-0 d-flex flex-column align-items-center justify-content-center" style={{ height: '5rem', width: '100%' }}>
+                        <div className="smart-def py-0 d-flex flex-column align-items-center justify-content-center" style={{ height: '5rem', width: '100%' }}>
                             <img src="/LMS/learn-icon.png" alt="" className="" height="65vh" />
                             <h5 className="mt-2">Learn From</h5>
                             <h6>Qualified Teachers</h6>
@@ -190,7 +190,7 @@ function Home() {
                             <div className="modal-content">
 
                                 <button type="button" className="btn-close align-self-end mt-3 me-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => { setUserModal(false); setLoginError(''); }}></button>
-                                <div className="modal-header d-flex flex-column align-items-center pb-5">
+                                <div className="px-5 d-flex flex-column align-items-center pb-5">
                                     <h2 className="mb-3 fw-bold">Login</h2>
                                     <p className="mb-4">Please Enter Your Login Credential</p>
                                     <form onSubmit={userLogin} className=" d-flex flex-column align-items-center gap-3" style={{ width: '20rem' }}>
@@ -249,7 +249,7 @@ function Home() {
                         <div className="modal-dialog modal-dialog-centered modal-fade-in">
                             <div className="modal-content">
                                 <button type="button" className="btn-close align-self-end mt-3 me-3" data-bs-dismiss="modal" aria-label="Close" onClick={() => { setAdminModal(false); setLoginError(''); }}></button>
-                                <div className="modal-header d-flex flex-column align-items-center pb-5">
+                                <div className="px-5 d-flex flex-column align-items-center pb-5">
                                     
 
                                         <h2 className="mb-3 fw-bold">Admin Login</h2>

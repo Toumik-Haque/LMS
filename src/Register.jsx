@@ -127,8 +127,8 @@ function Register() {
                     <div className="modal d-block modal-bg" tabIndex="-1">
                         <div className="modal-dialog modal-dialog-centered modal-fade-in">
                             <div className="modal-content">
-                                <div className="modal-header">
-                                    <div className="d-flex flex-column align-items-center ms-3 py-4 w-100">
+                                <div className="px-4">
+                                    <div className="d-flex flex-column align-items-center py-4 w-100">
 
                                         <div className="modal-icon-box">
                                             <FontAwesomeIcon icon={faCheck} className="modal-icon" style={{ width: '2.8rem' }} />

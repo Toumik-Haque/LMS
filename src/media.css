@@ -54,18 +54,19 @@
         display: grid !important;
         grid-template-columns: repeat(2, 1fr);
         height: fit-content !important;
-        row-gap: 5vh;
+        row-gap: 1vh;
         width: 90vw;
         column-gap: 0 !important;
-        padding-top: 3vh;
-        padding-bottom: 3vh;
+        padding: 1vh 0;
     }
 
     .after-hero .div-box > div{
-        width: 100% !important;
+        transform: scale(0.8);
+        width: 45vw !important;
         overflow: hidden;
         height: fit-content !important;
         border-right: 0 !important;
+        margin: auto !important;
     }
 
     .last-box .card-box{
@@ -114,10 +115,6 @@
         display: block !important;
         font-size: 1.6rem;
     }
-
-    /* .remember-box{
-        column-gap: 2rem !important;
-    } */
 
     .reset, .register{
         align-items: start !important;
@@ -171,6 +168,10 @@
     .reset .modal-title,
     .register .modal-title{
         font-size: larger;
+    }
+
+    .modal form{
+        max-width: 85vw !important;
     }
 
 }
