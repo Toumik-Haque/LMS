@@ -1,0 +1,82 @@
+.admin {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin .admin-nav {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.admin .main-area>button {
+    border: 0;
+    height: 10rem;
+    width: 15rem;
+    justify-content: center;
+    background-color: #7830ff;
+    color: white;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.admin .main-area {
+    height: 100%;
+    justify-content: center;
+    padding-top: 5%;
+    gap: 5rem;
+}
+
+.admin .main-area>button:hover {
+    transform: scale(1.05);
+}
+
+.admin .main-area>button:active {
+    background-color: #7830ff;
+    color: white;
+}
+
+.admin .lecture {
+    height: 100%;
+}
+
+.page-path{
+    margin-top: 25px;
+}
+
+input[type="search"]:focus {
+    outline: none;
+}
+
+.upload-btn{
+    background-color: #7830ff;
+    color: white;
+    font-weight: 500;
+    border: 2px solid #7830ff;
+}
+
+.upload-btn:hover,
+.upload-btn:active{
+    border: solid 2px #7830ff;
+    color: #7830ff;
+}
+
+.admin form .couple{
+    width: 100%;
+}
+
+.admin form input{
+  padding: 14px 10px;
+  border: 1px solid #4c4b4b;
+  border-radius: 5px;
+}
+
+.admin form label{
+    display: flex;
+    align-items: center;
+    width: 10rem !important;
+}
+
+.admin form{
+    margin: 0 15px;
+}

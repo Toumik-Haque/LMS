@@ -1,0 +1,87 @@
+.user{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.user .user-nav{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.user .left-nav{
+    border-right: solid 1px rgb(209, 209, 209);
+}
+
+.user .left-nav2{
+    border-right: solid 1px rgb(209, 209, 209);
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.user-name{
+    position: relative;
+}
+
+.user-options{
+    background-color: white;
+    border-radius: 5px;
+    width: 8.8rem;
+    position: absolute;
+    top: 5.5vh;
+    right: 5px;
+    box-shadow: 0 2px 7px rgba(141, 141, 141, 0.8);
+    
+}
+
+.user-options .btn{
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.user-options .btn:hover{
+    background-color: rgb(235, 233, 235);
+}
+
+.user .left-nav .btn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.user .left-nav2 .btn{
+    width: 3.2rem;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 8.5px !important;
+    padding-right: 8.5px !important;
+}
+
+.user .left-nav .btn:hover,
+.user .left-nav2 .btn:hover{
+    background-color: #dfceff;
+}
+
+.user .left-nav .btn.active{
+    background-color: #7830ff;
+    display: flex !important;
+    color: white;
+}
+
+.user .left-nav2 .btn.active{
+    display: flex !important;
+    color: #7830ff;
+}
+
+.user .main-area{
+    flex: 1 ;
+    overflow: hidden;
+}
+
+.user .left-nav, .left-nav2{
+    flex-shrink: 0;
+}
+
+.user .content{
+    overflow-y: auto;
+    flex: 1;
+}

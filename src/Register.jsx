@@ -9,6 +9,7 @@ function Register() {
     const [modal, setModal] = useState(false)
     const [loading, setLoading] = useState(false)
 
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confPassword, setConfPassword] = useState('')
@@ -33,7 +34,7 @@ function Register() {
         const res = await fetch("", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ name, email, password })
         })
 
         if (!res.ok) {
@@ -50,6 +51,7 @@ function Register() {
 
             setLoading(false)
             setModal(true)
+            setName('')
             setEmail('')
             setPassword('')
             setConfPassword('')
@@ -76,6 +78,10 @@ function Register() {
                         {
                             error && <p className="text-danger my-0 w-100 p-2 rounded-2" style={{ backgroundColor: '#ffe5e5' }}>{error}</p>
                         }
+                        <div className="input-group">
+                            <input type="text" id="name" placeholder=" " className="p-2 rounded-2 border-1 w-100" onChange={(e) => setName(e.target.value)} required value={name} />
+                            <label htmlFor="name">Enter Name</label>
+                        </div>
                         <div className="input-group">
                             <input type="email" id="email" placeholder=" " className="p-2 rounded-2 border-1 w-100" onChange={(e) => setEmail(e.target.value)} required value={email} />
                             <label htmlFor="email">Enter Email</label>

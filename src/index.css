@@ -17,9 +17,9 @@ body {
   background-color: white;
 }
 
-.side-nav {
+/* .side-nav {
   background-color: rgb(8, 27, 103);
-}
+} */
 
 .LMS {
   color: #7830ff;
@@ -55,15 +55,16 @@ body {
 .main-btn:active {
   background-color: #6828df !important;
   color: white !important;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .sub-btn {
-  background-color: #5C6B73;
-  color: white;
+  border: 1px solid;
 }
 
 .sub-btn:hover {
-  border: 1px solid #5C6B73;
+  border: 1px solid;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .nav-link {
