@@ -25,6 +25,8 @@ function Admin() {
     };
 
     function handleAddLecture() { }
+    function handleAddQuiz() { }
+    function handleAddTest() { }
 
     return (
         <div className="admin">
@@ -149,10 +151,72 @@ function Admin() {
                     }
                 </div>
 
-                <div className={`${showContent === 2 ? "d-block" : "d-none"} quiz h-50 bg-warning`}>
-                    <div className="d-flex justify-content-center">
-                        <button onClick={() => handleClick(0)}>BACK</button>
-                        Quiz Here</div>
+                <div className={`${showContent === 2 ? "d-block" : "d-none"} quiz`}>
+                    <div className="page-path fw-medium d-flex justify-content-center">
+                        <button className="btn border-0 p-0 me-2" onClick={() => handleClick(0)} style={{ color: '#7830ff' }}>Home</button>
+                        <div className="me-2">/</div>
+                        Uploaded Quizes
+                    </div>
+                    <div className="px-5 d-flex justify-content-center align-items-center mt-5 w-100 gap-3">
+
+                        <input type="search" name="" id="" placeholder="Search Quiz" className="px-2 py-2 w-50" />
+                        <button className="btn upload-btn py-2 px-3 d-flex align-items-center gap-2" onClick={() => setAddQuiz(true)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                            </svg>
+                            <div>Add New Quiz</div>
+                        </button>
+                    </div>
+
+                    {
+                        addQuiz && (
+                            <div className="modal d-block modal-bg" tabindex="-1">
+                                <div className="modal-dialog modal-dialog-centered modal-fade-in">
+                                    <div className="modal-content">
+                                        <div className="modal-body">
+                                            <form onSubmit={handleAddQuiz} className="d-flex flex-column align-items-center gap-3" style={{ width: '' }}>
+
+                                                <h4>Add New Lecture</h4>
+                                                <div className="d-flex flex-column gap-1 couple">
+                                                    <label htmlFor="title">Lecture Title:</label>
+                                                    <input type="text" id="title" placeholder="Enter Lecture Title" className="p-2 rounded-2 border-1 w-100" onChange={(e) => setTitle(e.target.value)} required value={title} />
+                                                </div>
+                                                <div className="d-flex flex-column gap-1 couple">
+                                                    <label htmlFor="category">Lecture Category:</label>
+                                                    <select name="category" id="category" className="p-2 rounded-2 border-1 w-100" value={category} onChange={(e) => setCategory(e.target.value)}>
+                                                        <option value="">Select</option>
+                                                        <option value="YouTube">YouTube Lecture</option>
+                                                        <option value="Live">Live Lecture</option>
+                                                    </select>
+                                                </div>
+                                                {
+                                                    category === "YouTube" && (
+                                                        <div className="d-flex flex-column gap-1 couple">
+                                                            <label htmlFor="link">YouTube Link:</label>
+                                                            <input type="text" id="link" placeholder="Enter YouTube Link" className="p-2 rounded-2 border-1 w-100" onChange={(e) => setLink(e.target.value)} required value={link} />
+                                                        </div>
+                                                    )
+                                                }
+                                                {
+                                                    category === "Live" && (
+                                                        <div className="d-flex flex-column gap-1 couple">
+                                                            <label htmlFor="thumbnail">Lecture Thumbnail:</label>
+                                                            <input type="file" name="thumbnail" id="thumbnail" className="p-2 rounded-2 border-1 w-100" />
+                                                        </div>
+                                                    )
+                                                }
+
+                                                <div className="mt-4 d-flex gap-2 align-items-center justify-content-center">
+                                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" style={{ width: '6rem' }} onClick={() => setAddLecture(false)}>Cancel</button>
+                                                    <button type="button" className="btn text-white" style={{ backgroundColor: '#7830ff', width: '6rem' }}>Add</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
 
                 <div className={`${showContent === 3 ? "d-block" : "d-none"} test h-25 bg-secondary`}>
