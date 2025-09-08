@@ -3,18 +3,16 @@ body {
   margin: 0 !important;
 }
 
-.home {
-  height: 175vh;
-}
-
 .main {
   background:
-    linear-gradient(to bottom, transparent 0%, transparent 84%, white 84%, white 100%),
+    linear-gradient(to bottom, transparent 0%, transparent 83%, white 83%, white 100%),
     linear-gradient(to right, #dacaff, #f2eeff);
 }
 
-.sticky-top {
+.nav-box {
   background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
 }
 
 /* .side-nav {
@@ -75,9 +73,12 @@ body {
   color: #6a00ff;
 }
 
+.hero-btn{
+  transition: transform 0.5s ease;
+}
+
 .hero-btn:hover {
   transform: scale(1.05);
-  transition: all 0.2s ease-in-out;
 }
 
 .register,
@@ -135,6 +136,10 @@ body {
   animation: fadeIn 1s ease-out forwards;
   opacity: 0;
   animation-delay: 1.5s;
+}
+
+.new-box .big-box{
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.311) !important;
 }
 
 .active {
@@ -301,4 +306,30 @@ body {
   width: 100%;
   height: 100%;
   background-color: #7d5cffb5;
+}
+
+.review-section{
+  margin-bottom: 6rem !important;
+  background-color: #eef2f6;
+  padding: 3rem 0;
+}
+
+.review-card{
+  background-color: white;
+  box-shadow: 0 20px 40px rgb(0, 0, 0, 0.08);
+  transition: transform 0.5s ease;
+}
+
+.review-card:hover{
+  transform: scale(1.05);
+}
+
+.verify-badge{
+  background-color: #7830ff;
+  color: white;
+}
+
+.footer-text{
+  line-height: 2rem;
+  margin-top: 1rem;
 }

@@ -89,7 +89,7 @@ function Admin() {
                         <div className="me-2">/</div>
                         Uploaded Lectures
                     </div>
-                    <div className="px-5 d-flex justify-content-center align-items-center mt-5 w-100 gap-3">
+                    <div className="px-5 d-flex justify-content-center align-items-center my-5 pb-5 w-100 gap-3">
 
                         <input type="search" name="" id="" placeholder="Search Lecture" className="px-2 py-2 w-50" />
                         <button className="btn upload-btn py-2 px-3 d-flex align-items-center gap-2" onClick={() => setAddLecture(true)}>
@@ -99,6 +99,14 @@ function Admin() {
                             <div>Add New Lecture</div>
                         </button>
                     </div>
+ 
+                    <div className="container d-flex gap-1 p-0">
+                        <button className="btn border-black rounded-1">All</button>
+                        <button className="btn border-black rounded-1">YouTube Lectures</button>
+                        <button className="btn border-black rounded-1">Live Lectures</button>
+                    </div>
+
+                    <div className="container mt-2" style={{ backgroundColor: '#a1a1a1ff', height: '0.05rem', width: '' }}></div>
 
                     {
                         addLecture && (
